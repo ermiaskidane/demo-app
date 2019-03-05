@@ -20,7 +20,7 @@ const phone = props => {
 
   return (
     <div className="Phone" style={style} onClick={props.clicked}>
-      <h1>
+      <h1 className={headingClass.join(" ")}>
         {" "}
         {props.name} have a {props.mobile} mobile.
       </h1>
