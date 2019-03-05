@@ -9,10 +9,14 @@ const phone = props => {
     marginTop: "3px"
   };
   
+  //  for some reason it only work with headingClass array not string(gives me readOnly)
+  
   const headingClass = [];
   if (props.owners.length <= 5) {
     headingClass.push("Blue");
   }
+  
+  console.log(props.owners.length);
 
   return (
     <div className="Phone" style={style} onClick={props.clicked}>
