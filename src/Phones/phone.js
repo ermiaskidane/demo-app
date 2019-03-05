@@ -8,6 +8,11 @@ const phone = props => {
     borderRadius: "5px",
     marginTop: "3px"
   };
+  
+  const headingClass = [];
+  if (props.owners.length <= 5) {
+    headingClass.push("Blue");
+  }
 
   return (
     <div className="Phone" style={style} onClick={props.clicked}>
