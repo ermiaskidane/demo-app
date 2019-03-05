@@ -90,6 +90,7 @@ class App extends Component {
                 name={own.name}
                 mobile={own.type}
                 changed={event => this.changedHandler(event, own.id)}
+    owners={this.state.owner}
               />
             );
           })}
