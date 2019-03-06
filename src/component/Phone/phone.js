@@ -9,10 +9,17 @@ const phone = props => {
     marginTop: "3px"
   };
 
+  //  for some reason it only work with headingClass array not string(gives me readOnly)
+  const headingClass = [];
+  if (props.owners.length <= 4) {
+    headingClass.push("Blue");
+  }
+
+  console.log(props.owners.length);
+
   return (
-    <div className="Phone" style={style} onClick={props.clicked}>
-      <h1>
-        {" "}
+    <div className="Phone" style={style}>
+      <h1 className={headingClass.join(" ")} onClick={props.clicked}>
         {props.name} have a {props.mobile} mobile.
       </h1>
 

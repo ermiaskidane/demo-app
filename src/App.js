@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+
 import "./App.css";
-import Phone from "./Phones/phone";
+import Mobile from "./component/Mobile";
+import Cockpit from "./component/Cockpit/Cokcpit";
 
 class App extends Component {
   state = {
@@ -13,16 +15,10 @@ class App extends Component {
       { name: "cubo", type: "iphone", id: "6A" }
     ],
     change: false
-
-    // sumsung: 3,
-    // iphone: 2,
-    // huawei: 1
   };
 
   clickChangeHandler = () => {
     console.log(this.state.change);
-    const doesChange = this.state.change;
-    // this.setState({ change: !doesChange });
     this.setState(prevState => {
       return {
         change: !prevState.change
@@ -65,35 +61,14 @@ class App extends Component {
   };
 
   render() {
-    let owner = null;
-
-    // const maps = this.state.owner.map((own, index) => {
-    //   return (
-    //     <Phone
-    //       key={own.id}
-    //       clicked={() => this.deleteClickHandler(own.id)}
-    //       name={own.name}
-    //       mobile={own.type}
-    //       changed={event => this.changedHandler(event, own.id)}
-    //     />
-    //   );
-    // });
-    // console.log(maps);
+    let mobile = null;
     if (this.state.change) {
-      owner = (
-        <div>
-          {this.state.owner.map((own, index) => {
-            return (
-              <Phone
-                key={own.id}
-                clicked={() => this.deleteClickHandler(own.id)}
-                name={own.name}
-                mobile={own.type}
-                changed={event => this.changedHandler(event, own.id)}
-              />
-            );
-          })}
-        </div>
+      mobile = (
+        <Mobile
+          owner={this.state.owner}
+          clickDelete={this.deleteClickHandler}
+          changeState={this.changedHandler}
+        />
       );
     }
 
@@ -109,25 +84,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1 className={assingedClasses.join(" ")}>react app</h1>
-        <button
-          className={changeButton.join(" ")}
-          onClick={this.clickChangeHandler}
-        >
-          click me{" "}
-        </button>
-        {owner}
-        {/* <Phone
-          mobile={this.state.owner[4].type}
-          name={this.state.owner[4].name}
-          clicked={this.clickedHandler}
-          changed={this.changedHandler}
+        <Cockpit
+          assingedClasses={assingedClasses.join(" ")}
+          changeButton={changeButton.join(" ")}
+          clickChangeHandler={this.clickChangeHandler}
         />
-        <Phone
-          mobile={this.state.owner[1].type}
-          name={this.state.owner[1].name}
-        />
-        <Phone> well props children</Phone> */}
+        {mobile}
       </div>
     );
   }
