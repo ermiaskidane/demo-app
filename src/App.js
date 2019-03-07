@@ -14,7 +14,8 @@ class App extends Component {
       { name: "gdewon", type: "sumsung", id: "5A" },
       { name: "cubo", type: "iphone", id: "6A" }
     ],
-    change: false
+    change: false,
+    numbers: 0
   };
 
   clickChangeHandler = () => {
