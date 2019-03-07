@@ -18,6 +18,8 @@ class App extends Component {
     numbers: 0
   };
 
+
+
   clickChangeHandler = () => {
     console.log(this.state.change);
     this.setState(prevState => {
@@ -59,6 +61,14 @@ class App extends Component {
     // });
     owner.splice(ownerId, 1);
     this.setState({ owner: owner });
+  };
+
+numbersClickedHandler = () => {
+    this.setState((prevState, props) => {
+      return {
+        numbers: prevState.numbers + 1
+      };
+    });
   };
 
   render() {
