@@ -88,6 +88,7 @@ class App extends Component {
           assingedClasses={assingedClasses.join(" ")}
           changeButton={changeButton.join(" ")}
           clickChangeHandler={this.clickChangeHandler}
+          numbersClicked={this.numbersClickedHandler}
         />
         {mobile}
       </div>
