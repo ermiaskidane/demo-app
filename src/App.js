@@ -18,8 +18,6 @@ class App extends Component {
     numbers: 0
   };
 
-
-
   clickChangeHandler = () => {
     console.log(this.state.change);
     this.setState(prevState => {
@@ -69,6 +67,7 @@ numbersClickedHandler = () => {
         numbers: prevState.numbers + 1
       };
     });
+     console.log(this.state.numbers);
   };
 
   render() {
