@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+
 import "./App.css";
-import Phone from "./Phones/phone";
+import Mobile from "./component/Mobile";
+import Cockpit from "./component/Cockpit/Cokcpit";
+
+export const AuthContext = React.createContext(false);
 
 class App extends Component {
   state = {
@@ -12,17 +16,13 @@ class App extends Component {
       { name: "gdewon", type: "sumsung", id: "5A" },
       { name: "cubo", type: "iphone", id: "6A" }
     ],
-    change: false
-
-    // sumsung: 3,
-    // iphone: 2,
-    // huawei: 1
+    change: false,
+    numbers: 0,
+    isAuthenticated: false
   };
 
   clickChangeHandler = () => {
     console.log(this.state.change);
-    const doesChange = this.state.change;
-    // this.setState({ change: !doesChange });
     this.setState(prevState => {
       return {
         change: !prevState.change
@@ -64,37 +64,31 @@ class App extends Component {
     this.setState({ owner: owner });
   };
 
-  render() {
-    let owner = null;
+  numbersClickedHandler = () => {
+    this.setState((prevState, props) => {
+      return {
+        numbers: prevState.numbers + 1
+      };
+    });
+    console.log(this.state.numbers);
+  };
 
-    // const maps = this.state.owner.map((own, index) => {
-    //   return (
-    //     <Phone
-    //       key={own.id}
-    //       clicked={() => this.deleteClickHandler(own.id)}
-    //       name={own.name}
-    //       mobile={own.type}
-    //       changed={event => this.changedHandler(event, own.id)}
-    //     />
-    //   );
-    // });
-    // console.log(maps);
+  loginHandler = () => {
+    this.setState(prevState => {
+      return {
+        isAuthenticated: !prevState.isAuthenticated
+      };
+    });
+  };
+  render() {
+    let mobile = null;
     if (this.state.change) {
-      owner = (
-        <div>
-          {this.state.owner.map((own, index) => {
-            return (
-              <Phone
-                key={own.id}
-                clicked={() => this.deleteClickHandler(own.id)}
-                name={own.name}
-                mobile={own.type}
-                changed={event => this.changedHandler(event, own.id)}
-                owners={this.state.owner}
-              />
-            );
-          })}
-        </div>
+      mobile = (
+        <Mobile
+          owner={this.state.owner}
+          clickDelete={this.deleteClickHandler}
+          changeState={this.changedHandler}
+        />
       );
     }
 
@@ -110,25 +104,16 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1 className={assingedClasses.join(" ")}>react app</h1>
-        <button
-          className={changeButton.join(" ")}
-          onClick={this.clickChangeHandler}
-        >
-          click me{" "}
-        </button>
-        {owner}
-        {/* <Phone
-          mobile={this.state.owner[4].type}
-          name={this.state.owner[4].name}
-          clicked={this.clickedHandler}
-          changed={this.changedHandler}
+        <Cockpit
+          assingedClasses={assingedClasses.join(" ")}
+          changeButton={changeButton.join(" ")}
+          clickChangeHandler={this.clickChangeHandler}
+          numbersClicked={this.numbersClickedHandler}
+          login={this.loginHandler}
         />
-        <Phone
-          mobile={this.state.owner[1].type}
-          name={this.state.owner[1].name}
-        />
-        <Phone> well props children</Phone> */}
+        <AuthContext.Provider value={this.state.isAuthenticated}>
+          {mobile}
+        </AuthContext.Provider>
       </div>
     );
   }
