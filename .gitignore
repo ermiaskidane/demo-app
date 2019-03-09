@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+# folders
+/src/Errorboundry
+
 # production
 /build
 
