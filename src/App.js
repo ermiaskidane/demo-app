@@ -57,9 +57,6 @@ class App extends Component {
 
   deleteClickHandler = ownerId => {
     const owner = [...this.state.owner];
-    // owner.filter(f => {
-    //   return f.id === ownerId;
-    // });
     owner.splice(ownerId, 1);
     this.setState({ owner: owner });
   };
