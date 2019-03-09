@@ -1,12 +1,1 @@
-.Phone {
-  cursor: pointer;
-}
 
-.Phone:hover {
-  background-color: red;
-  border-radius: 10px;
-}
-
-.Blue {
-  background-color: blue;
-}
