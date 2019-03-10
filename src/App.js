@@ -21,6 +21,14 @@ class App extends Component {
     isAuthenticated: false
   };
 
+  sorterFunction = () => {
+      const ordered = this.state.owner.reverse();
+      console.log(ordered);
+      return {
+        ordered
+      };
+    };
+
   clickChangeHandler = () => {
     console.log(this.state.change);
     this.setState(prevState => {
