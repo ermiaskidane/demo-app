@@ -109,7 +109,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>hello</h1>
+        <h1 onClick={this.sorterFunction}>hello</h1>
         <Cockpit
           assingedClasses={assingedClasses.join(" ")}
           changeButton={changeButton.join(" ")}
