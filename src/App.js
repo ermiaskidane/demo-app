@@ -37,17 +37,7 @@ class App extends Component {
       };
     });
   }
-  // sorterFunction = () => {
-  //   const ordered = this.state.owner.reverse();
-  //   console.log(ordered);
-  //   this.setState(prevState => {
-  //     return {
-  //       owner: ordered
-  //     };
-  //   });
-  // };
 
-  
 
   clickChangeHandler = () => {
     console.log(this.state.change);
