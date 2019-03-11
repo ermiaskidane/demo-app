@@ -119,7 +119,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        {/*  using componentShouldmount chnage the format of array for my mobile component*/}
         <h1 onClick={this.sorterFunction}>hello</h1>
         <Cockpit
           assingedClasses={assingedClasses.join(" ")}
