@@ -20,6 +20,32 @@ class App extends Component {
     numbers: 0,
     isAuthenticated: false
   };
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("shouldComponentUpdate");
+    return (
+      nextState.change !== this.state.change ||
+      nextState.owner !== this.state.owner
+    );
+  }
+
+  componentDidUpdate() {
+    const ordered = this.state.owner.reverse();
+    console.log(ordered);
+    this.setState(prevState => {
+      return {
+        owner: ordered
+      };
+    });
+  }
+  // sorterFunction = () => {
+  //   const ordered = this.state.owner.reverse();
+  //   console.log(ordered);
+  //   this.setState(prevState => {
+  //     return {
+  //       owner: ordered
+  //     };
+  //   });
+  // };
 
   clickChangeHandler = () => {
     console.log(this.state.change);
@@ -101,6 +127,8 @@ class App extends Component {
 
     return (
       <div className="App">
+        {/*  using componentShouldmount chnage the format of array for my mobile component*/}
+        <h1 onClick={this.sorterFunction}>hello</h1>
         <Cockpit
           assingedClasses={assingedClasses.join(" ")}
           changeButton={changeButton.join(" ")}

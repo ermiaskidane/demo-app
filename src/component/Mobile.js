@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Phone from "./Phone/phone";
 import { AuthContext } from "../App";
 
