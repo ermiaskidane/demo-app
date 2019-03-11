@@ -47,6 +47,8 @@ class App extends Component {
   //   });
   // };
 
+  
+
   clickChangeHandler = () => {
     console.log(this.state.change);
     this.setState(prevState => {
