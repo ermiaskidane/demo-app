@@ -21,13 +21,7 @@ class App extends Component {
     isAuthenticated: false
   };
 
-  sorterFunction = () => {
-      const ordered = this.state.owner.reverse();
-      console.log(ordered);
-      return {
-        ordered
-      };
-    };
+  
 
   clickChangeHandler = () => {
     console.log(this.state.change);
@@ -109,7 +103,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1 onClick={this.sorterFunction}>hello</h1>
+        <h1>hello</h1>
         <Cockpit
           assingedClasses={assingedClasses.join(" ")}
           changeButton={changeButton.join(" ")}
