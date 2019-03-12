@@ -23,18 +23,6 @@ const phone = props => {
       <h1 className={headingClass.join(" ")} onClick={props.clicked}>
         {props.name} have a {props.mobile} mobile.
       </h1>
-      {/* <AuthContext.Consumer>
-        {auth =>
-          auth ? (
-            <input
-              style={{ marginBottom: "3px" }}
-              type="text"
-              onChange={props.changed}
-              value={props.name}
-            />
-          ) : null
-        }
-      </AuthContext.Consumer> */}
       <input
         style={{ marginBottom: "3px" }}
         type="text"
