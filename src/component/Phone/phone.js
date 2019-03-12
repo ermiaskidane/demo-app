@@ -41,6 +41,7 @@ const phone = props => {
         onChange={props.changed}
         value={props.name}
       />
+      <button onClick={props.submit}>submit</button>
     </div>
   );
 };

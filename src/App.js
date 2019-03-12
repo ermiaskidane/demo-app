@@ -18,13 +18,15 @@ class App extends Component {
     ],
     change: false,
     numbers: 0,
-    isAuthenticated: false
+    isAuthenticated: false,
+    myBgdClr: "red"
   };
   shouldComponentUpdate(nextProps, nextState) {
     console.log("shouldComponentUpdate");
     return (
       nextState.change !== this.state.change ||
-      nextState.owner !== this.state.owner
+      nextState.owner !== this.state.owner ||
+      nextState.isAuthenticated !== this.state.isAuthenticated
     );
   }
 
@@ -37,17 +39,6 @@ class App extends Component {
       };
     });
   }
-  // sorterFunction = () => {
-  //   const ordered = this.state.owner.reverse();
-  //   console.log(ordered);
-  //   this.setState(prevState => {
-  //     return {
-  //       owner: ordered
-  //     };
-  //   });
-  // };
-
-  
 
   clickChangeHandler = () => {
     console.log(this.state.change);
@@ -83,10 +74,17 @@ class App extends Component {
     });
   };
 
+  // find out if I could submitt the change through a button
+
+  // submitHandler = () => {
+  //   changedHandler();
+  // };
   deleteClickHandler = ownerId => {
     const owner = [...this.state.owner];
     owner.splice(ownerId, 1);
-    this.setState({ owner: owner });
+    this.setState({
+      owner: owner
+    });
   };
 
   numbersClickedHandler = () => {
@@ -113,6 +111,7 @@ class App extends Component {
           owner={this.state.owner}
           clickDelete={this.deleteClickHandler}
           changeState={this.changedHandler}
+          submitter={this.submitHandler}
         />
       );
     }
@@ -126,24 +125,29 @@ class App extends Component {
     if (this.state.change) {
       changeButton.push("Green", "Circle");
     }
-
     return (
       <div className="App">
-        {/*  using componentShouldmount chnage the format of array for my mobile component*/}
-        <h1 onClick={this.sorterFunction}>hello</h1>
         <Cockpit
           assingedClasses={assingedClasses.join(" ")}
           changeButton={changeButton.join(" ")}
           clickChangeHandler={this.clickChangeHandler}
           numbersClicked={this.numbersClickedHandler}
           login={this.loginHandler}
+          owner={this.state.owner}
         />
         <AuthContext.Provider value={this.state.isAuthenticated}>
           {mobile}
         </AuthContext.Provider>
+        <div style={{ backgroundColor: `${this.state.myBgdClr}` }}>
+          style template way{" "}
+        </div>
       </div>
     );
   }
 }
 
 export default App;
+
+// next move is
+// 1. out source the code somewhere so app.js looks clean and tide
+// 2. use submitter button sothat we could see smoothchange in owner state
