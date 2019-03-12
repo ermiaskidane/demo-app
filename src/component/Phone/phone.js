@@ -1,6 +1,5 @@
 import React from "react";
 import "./phone.css";
-// import { AuthContext } from "../../App";
 
 const phone = props => {
   const style = {
