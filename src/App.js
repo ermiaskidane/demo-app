@@ -146,8 +146,4 @@ class App extends Component {
   }
 }
 
-export default App;
 
-// next move is
-// 1. out source the code somewhere so app.js looks clean and tide
-// 2. use submitter button sothat we could see smoothchange in owner state
