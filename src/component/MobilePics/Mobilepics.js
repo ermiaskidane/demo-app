@@ -17,6 +17,14 @@ const roomMates = [
 const mobilePics = props => {
   return (
     <div className="MobilePics">
+    {roomMates.map(rm => {
+        return (
+          <ul key={rm.label}>
+            <li>{rm.label}</li>
+            <img className="Samsung" src={Iphone} alt="no display" />
+          </ul>
+        );
+      })}
       <img className="Samsung" src={Samsung} alt="no display" />
       <img className="Iphone" src={Iphone} alt="no display" />;
       <img className="Huawei" src={Huawei} alt="no display" />;
