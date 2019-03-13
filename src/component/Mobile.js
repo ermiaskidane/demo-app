@@ -1,6 +1,6 @@
 import React from "react";
 import Phone from "./Phone/phone";
-import { AuthContext } from "../App";
+import { AuthContext } from "../containers/ListName";
 
 const listName = [
   { name: "ermias", type: "huawei", id: "1A" },
