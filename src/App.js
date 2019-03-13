@@ -14,8 +14,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
-
-// next move is
-// 1. use submitter button sothat we could see smoothchange in owner state
