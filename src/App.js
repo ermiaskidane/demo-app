@@ -10,6 +10,14 @@ class App extends Component {
   render() {
     return (
       <div>
+        <ul>
+           <li>
+              <NavLink to="/">Home</NavLink>
+           </li>
+           <li>
+              <NavLink to="/mobile">Mobile</NavLink>
+           </li>
+        </ul>
         <Switch>
           <Route path="/" exact component={ListName} />
           <Route path="/mobile" strict component={MobilePics} />
