@@ -20,6 +20,9 @@ class ListName extends Component {
     isAuthenticated: false,
     myBgdClr: "red"
   };
+  componentDidMount() {
+    console.log(this.props);
+  }
   shouldComponentUpdate(nextProps, nextState) {
     console.log("shouldComponentUpdate");
     return (
