@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <ul>
+        <ul style={{ listStyle: "none", display: "flex", justifyContent: "center" }}>
            <li>
               <NavLink to="/">Home</NavLink>
            </li>
