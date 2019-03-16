@@ -4,14 +4,7 @@ import Iphone from "../../assets/images/iphone.jpg";
 import Huawei from "../../assets/images/huawei.jpg";
 import "./MobilePics.css";
 
-// const roomMates = [
-//   { label: "ermias" },
-//   { label: "kokobe" },
-//   { label: "natu" },
-//   { label: "saymon" },
-//   { label: "gdewon" },
-//   { label: "cubo" }
-// ];
+
 
 const mobilePics = props => {
   return (
