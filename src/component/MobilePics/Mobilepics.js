@@ -5,6 +5,9 @@ import Huawei from "../../assets/images/huawei.jpg";
 import "./MobilePics.css";
 
 class MobilePics extends Component {
+  state = {
+    owner: null
+  };
   render() {
     console.log(this.props);
     console.log(this.state.owner);
