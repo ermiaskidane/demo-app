@@ -10,6 +10,20 @@ class App extends Component {
   render() {
     return (
       <div>
+        <ul
+          style={{
+            listStyle: "none",
+            display: "flex",
+            justifyContent: "center"
+          }}
+        >
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/mobile">Mobile</NavLink>
+          </li>
+        </ul>
         <Switch>
           <Route path="/" exact component={ListName} />
           <Route path="/mobile" strict component={MobilePics} />

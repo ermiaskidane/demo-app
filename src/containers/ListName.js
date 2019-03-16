@@ -105,6 +105,7 @@ class ListName extends Component {
       };
     });
   };
+
   render() {
     let mobile = null;
     if (this.state.change) {
@@ -140,9 +141,11 @@ class ListName extends Component {
         <AuthContext.Provider value={this.state.isAuthenticated}>
           {mobile}
         </AuthContext.Provider>
+        <button onClick={this.nextPage}>Next page</button>
         <div style={{ backgroundColor: `${this.state.myBgdClr}` }}>
           style template way{" "}
         </div>
+        <h1>hello:</h1>
       </div>
     );
   }
