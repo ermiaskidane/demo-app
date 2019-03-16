@@ -105,6 +105,23 @@ class ListName extends Component {
       };
     });
   };
+
+nextPage = () => {
+    const queryParams = [];
+    const ownerState = this.state.owner;
+    ownerState.forEach(obj => {
+      Object.keys(obj).forEach(i => {
+        queryParams.push(
+          encodeURIComponent(i) + "=" + encodeURIComponent(obj[i])
+        );
+      });
+    });
+    const queryString = queryParams.join("&");
+    console.log(queryParams);
+    // this.props.history.push("/mobile");
+    this.props.history.push({ pathname: "/mobile", search: "?" + queryString });
+  };
+
   render() {
     let mobile = null;
     if (this.state.change) {
