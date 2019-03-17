@@ -10,3 +10,10 @@
   width: 8rem;
   height: 9rem;
 }
+
+.BackButton {
+  width: 4rem;
+  height: 3rem;
+  text-align: center;
+  margin: auto;
+}
