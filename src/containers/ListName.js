@@ -161,7 +161,7 @@ class ListName extends Component {
         <div style={{ backgroundColor: `${this.state.myBgdClr}` }}>
           style template way{" "}
         </div>
-        <h1>hello:</h1>
+        <h1>hello:{this.props.match.params.id}</h1>
       </div>
     );
   }
