@@ -51,7 +51,9 @@ class MobilePics extends Component {
     });
     return (
       <div className="MobilePics">
-        
+        <button onClick={this.pushBack} className="BackButton">
+          back
+        </button>
         {transferredState}
         <Route path={this.props.match.path + "/nested"} component={NestRoute} />
         <h1 onClick={this.NestRouteHandler}>for the Nest Route:</h1>
